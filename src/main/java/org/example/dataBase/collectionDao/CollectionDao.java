@@ -21,7 +21,10 @@ public class CollectionDao extends Dao<CollectionCredentials, Collection> {
     public Collection get(CollectionCredentials collectionCredentials) {
         Collection collection = null;
         for (Collection c : collectionArrayList) {
-           
+            if(collectionCredentials.equals(c)) {
+                collection = c;
+                break;
+            }
         }
         return collection;
     }

@@ -1,4 +1,4 @@
-package org.example.exception;
+package org.example.exceptiom;
 
 public class ATMException extends Exception {
 

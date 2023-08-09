@@ -1,6 +1,6 @@
 package org.example.ui;
 
-import org.example.exception.ATMException;
+import org.example.exceptiom.ATMException;
 import org.example.model.UserCredentials;
 
 public interface UI {

@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.exception.ATMException;
+import org.example.exceptiom.ATMException;
 import org.example.core.Core;
 
 import java.io.*;

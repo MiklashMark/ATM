@@ -1,10 +1,9 @@
 package org.example;
 
-import org.example.Exception.ATMException;
+import org.example.exception.ATMException;
 import org.example.core.Core;
 
 import java.io.*;
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {

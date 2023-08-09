@@ -1,6 +1,6 @@
 package org.example.core;
 
-import org.example.Exception.ATMException;
+import org.example.exception.ATMException;
 import org.example.atm.collectionOperations.CollectionOperations;
 import org.example.atm.collectionOperations.ICollectionOperations;
 import org.example.atm.userOperations.IUserOperations;

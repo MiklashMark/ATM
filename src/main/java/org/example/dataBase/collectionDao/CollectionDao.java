@@ -13,17 +13,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
-public class CollectionDao extends Dao<CollectionCredentials, Optional<Collection>> {
-
-
-
-    @Override
-    public Optional<Collection> get(CollectionCredentials collectionCredentials) {
-        getAll();
-        return collectionList.stream().filter(c -> c.getIdentificationNumber().equals(collectionCredentials.getIdentificationNumber())
-                && c.getPassword().equals(collectionCredentials.getPassword())).findFirst();
-    }
-
+public class CollectionDao extends Dao<CollectionCredentials, Optional<Collection>> implements ICollectionDao {
     @Override
     public void getAll() {
         try(BufferedReader  bufferedReader = new BufferedReader(new FileReader(collectionDB))) {
@@ -38,5 +28,11 @@ public class CollectionDao extends Dao<CollectionCredentials, Optional<Collectio
     @Override
     public void isNotFound() {
         System.out.println("Invalid Input! Try again.");
+    }
+
+    @Override
+    public Optional<Collection> getCollection(CollectionCredentials collectionCredentials) {
+        return usersList.stream().filter(u->u.getCardNumber().equals(userCredentials.getCardNumber())
+                && u.getCardPassword().equals(userCredentials.getPinCode())).findFirst();
     }
 }

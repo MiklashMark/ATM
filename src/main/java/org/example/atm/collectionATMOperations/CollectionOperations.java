@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CollectionOperations extends ATM implements IATMOperations, ICollectionOperations {
+public class CollectionOperations extends ATM implements  ICollectionOperations {
 
     @Override
     public void addCash() throws IOException {

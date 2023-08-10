@@ -31,13 +31,12 @@ public class UserDao extends Dao<UserCredentials, Optional<User>> implements IUs
         }
     }
 
-
     @Override
-    public Optional<User> get(UserCredentials userCredentials) {
-        User user = null;
+    public Optional<User> getUser(UserCredentials userCredentials) {
         return usersList.stream().filter(u->u.getCardNumber().equals(userCredentials.getCardNumber())
                 && u.getCardPassword().equals(userCredentials.getPinCode())).findFirst();
     }
+
 
     @Override
     public void getAll() {

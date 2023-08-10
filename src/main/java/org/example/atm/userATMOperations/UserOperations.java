@@ -5,7 +5,7 @@ import org.example.atm.IATMOperations;
 
 import java.io.IOException;
 
-public class UserOperations extends ATM implements IATMOperations,IUserOperations{
+public class UserOperations extends ATM implements IUserOperations{
 
     @Override
     public void replenishTheBalance() {

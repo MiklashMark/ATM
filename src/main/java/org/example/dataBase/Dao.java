@@ -2,7 +2,6 @@ package org.example.dataBase;
 
 import org.example.model.Collection;
 import org.example.model.User;
-import org.example.model.UserCredentials;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,7 +10,7 @@ import java.util.List;
 
 public abstract class Dao<T,V> {
     protected List<User> usersList = new ArrayList<>();
-    protected List<Collection> collectionArrayList = new ArrayList<>();
+    protected List<Collection> collectionList = new ArrayList<>();
     protected boolean authorizationIndicator = false;
     protected final String userDB = "C:\\Users\\markm\\Desktop" +
             "\\javaProjectsHome\\ATM\\src\\main\\java\\org\\example\\dataBase\\usersFile";

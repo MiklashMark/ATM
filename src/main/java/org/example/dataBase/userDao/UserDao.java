@@ -10,9 +10,8 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
-import java.util.regex.Pattern;
 
-public class UserDao extends Dao<UserCredentials, User> implements IUserDao {
+public class UserDao extends Dao<UserCredentials, Optional<User>> implements IUserDao {
 
 
     @Override
@@ -34,15 +33,10 @@ public class UserDao extends Dao<UserCredentials, User> implements IUserDao {
 
 
     @Override
-    public User get(UserCredentials userCredentials) {
+    public Optional<User> get(UserCredentials userCredentials) {
         User user = null;
-        for (User u : usersList) {
-            if(userCredentials.equals(u)) {
-                user = u;
-                break;
-            }
-        }
-        return user;
+        return usersList.stream().filter(u->u.getCardNumber().equals(userCredentials.getCardNumber())
+                && u.getCardPassword().equals(userCredentials.getPinCode())).findFirst();
     }
 
     @Override

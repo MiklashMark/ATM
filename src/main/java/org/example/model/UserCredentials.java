@@ -33,20 +33,6 @@ public class UserCredentials {
         this.pinCode = pinCode;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null) return false;
-        if (!(o instanceof User user)) return false;
-        return Objects.equals(cardNumber, user.getCardNumber())
-                && Objects.equals(pinCode, user.getCardPassword());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cardNumber, pinCode);
-    }
-
     public UserCredentials getCredentials(UserCredentials credentials){return credentials; }
 
     @Override

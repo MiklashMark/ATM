@@ -5,28 +5,22 @@ import com.google.gson.reflect.TypeToken;
 import org.example.dataBase.Dao;
 import org.example.model.Collection;
 import org.example.model.CollectionCredentials;
-import org.example.model.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Optional;
 
-public class CollectionDao extends Dao<CollectionCredentials, Collection> {
+public class CollectionDao extends Dao<CollectionCredentials, Optional<Collection>> {
 
 
 
     @Override
-    public Collection get(CollectionCredentials collectionCredentials) {
-        Collection collection = null;
-        for (Collection c : collectionArrayList) {
-            if(collectionCredentials.equals(c)) {
-                collection = c;
-                break;
-            }
-        }
-        return collection;
+    public Optional<Collection> get(CollectionCredentials collectionCredentials) {
+        return collectionList.stream().filter(c -> c.getIdentificationNumber().equals(collectionCredentials.getIdentificationNumber())
+                && c.getPassword().equals(collectionCredentials.getPassword())).findFirst();
     }
 
     @Override
@@ -34,7 +28,7 @@ public class CollectionDao extends Dao<CollectionCredentials, Collection> {
         try(BufferedReader  bufferedReader = new BufferedReader(new FileReader(collectionDB))) {
             Gson gson = new Gson();
             Type jsonType = new TypeToken<List<Collection>>(){}.getType();
-            collectionArrayList = gson.fromJson(bufferedReader, jsonType);
+            collectionList = gson.fromJson(bufferedReader, jsonType);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

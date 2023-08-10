@@ -10,17 +10,11 @@ public class CollectionCredentials {
         this.identificationNumber = identificationNumber;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null) return false;
-        if (!(o instanceof Collection collection)) return false;
-        return Objects.equals(identificationNumber, collection.getIdentificationNumber())
-                && Objects.equals(password, collection.getPassword());
+    public String getIdentificationNumber() {
+        return identificationNumber;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(identificationNumber, password);
+    public String getPassword() {
+        return password;
     }
 }

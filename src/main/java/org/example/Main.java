@@ -19,7 +19,5 @@ public class Main {
 
     }
 
-    public void gogit(){
 
-    }
 }

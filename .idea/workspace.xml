@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="729d6f08-1b54-416b-a6ec-3967721bd568" name="Changes" comment="add sout in main">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    <list default="true" id="729d6f08-1b54-416b-a6ec-3967721bd568" name="Changes" comment="//comments">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/atm/collectionOperations/CollectionOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/atm/collectionOperations/CollectionOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dataBase/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dataBase/Dao.java" afterDir="false" />
     </list>
@@ -37,19 +39,21 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ATM" />
@@ -74,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1691666989474</updated>
       <workItem from="1691666990481" duration="548000" />
-      <workItem from="1691667575347" duration="340000" />
+      <workItem from="1691667575347" duration="1550000" />
     </task>
     <task id="LOCAL-00001" summary="add sout in main">
       <created>1691667740253</created>
@@ -83,7 +87,42 @@
       <option name="project" value="LOCAL" />
       <updated>1691667740253</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add sout in main">
+      <created>1691668041274</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691668041274</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add sout in main">
+      <created>1691668047381</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691668047381</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gogit method added">
+      <created>1691668762465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691668762465</updated>
+    </task>
+    <task id="LOCAL-00005" summary="gogit method added">
+      <created>1691668811658</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691668811658</updated>
+    </task>
+    <task id="LOCAL-00006" summary="//comments">
+      <created>1691669078483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1691669078483</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,11 +136,43 @@
             <State />
           </value>
         </entry>
+        <entry key="fd764aa5-f2ca-40e3-aabd-51a1c985cb72">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="fd764aa5-f2ca-40e3-aabd-51a1c985cb72" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add sout in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sout in main" />
+    <MESSAGE value="gogit method added" />
+    <MESSAGE value="//comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="//comments" />
   </component>
 </project>

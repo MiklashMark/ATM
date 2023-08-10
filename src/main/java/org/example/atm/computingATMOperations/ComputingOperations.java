@@ -1,6 +1,6 @@
 package org.example.atm.computingATMOperations;
 
-import org.example.atm.collectionOperations.CollectionOperations;
+import org.example.atm.collectionATMOperations.CollectionOperations;
 import org.example.model.Banknotes;
 
 import java.util.ArrayList;

@@ -1,10 +1,10 @@
 package org.example.core;
 
 import org.example.exception.ATMException;
-import org.example.atm.collectionOperations.CollectionOperations;
-import org.example.atm.collectionOperations.ICollectionOperations;
-import org.example.atm.userOperations.IUserOperations;
-import org.example.atm.userOperations.UserOperations;
+import org.example.atm.collectionATMOperations.CollectionOperations;
+import org.example.atm.collectionATMOperations.ICollectionOperations;
+import org.example.atm.userATMOperations.IUserOperations;
+import org.example.atm.userATMOperations.UserOperations;
 import org.example.dataBase.userDao.IUserDao;
 import org.example.dataBase.userDao.UserDao;
 import org.example.model.UserCredentials;
@@ -42,6 +42,8 @@ public class Core {
 //            } else break;
 //        }
         iCollectionOperations.checkBalance();
+
+
 
 
     }

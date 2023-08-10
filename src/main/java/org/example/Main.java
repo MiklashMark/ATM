@@ -15,9 +15,5 @@ public class Main {
         } catch (ATMException | IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
-
-
 }

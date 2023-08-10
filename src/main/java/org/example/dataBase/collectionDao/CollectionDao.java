@@ -19,6 +19,7 @@ public class CollectionDao extends Dao<CollectionCredentials, Optional<Collectio
 
     @Override
     public Optional<Collection> get(CollectionCredentials collectionCredentials) {
+        getAll();
         return collectionList.stream().filter(c -> c.getIdentificationNumber().equals(collectionCredentials.getIdentificationNumber())
                 && c.getPassword().equals(collectionCredentials.getPassword())).findFirst();
     }

@@ -1,6 +1,6 @@
 package org.example.ui;
 
-import org.example.exceptiom.ATMException;
+import org.example.exception.ATMException;
 import org.example.model.UserCredentials;
 
 import java.util.Scanner;
@@ -112,7 +112,6 @@ public class ConsoleUI implements UI {
 
     @Override
     public void showBalanceReplenish() {
-
     }
 
 

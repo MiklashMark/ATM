@@ -1,17 +1,22 @@
 [
   {
-    "identificationNumber": "1234"
+    "identificationNumber": "1234",
+    "password": "CollectionATM"
   },
   {
-    "identificationNumber": "5678"
+    "identificationNumber": "5678",
+    "password": "CollectionATM"
   },
   {
-    "identificationNumber": "9012"
+    "identificationNumber": "9012",
+    "password": "CollectionATM"
   },
   {
-    "identificationNumber": "3456"
+    "identificationNumber": "3456",
+    "password": "CollectionATM"
   },
   {
-    "identificationNumber": "7890"
+    "identificationNumber": "7890",
+    "password": "CollectionATM"
   }
 ]

@@ -27,7 +27,6 @@ public class CollectionOperations implements ICollectionOperations {
 
 
     private Scanner collectionInput = new Scanner(System.in);
-    private int input;
 
     @Override
     public void getCash() throws IOException {

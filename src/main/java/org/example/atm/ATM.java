@@ -1,12 +1,10 @@
 package org.example.atm;
 
-import org.example.atm.ATMcomputingOperations.ATMComputingOperations;
-import org.example.atm.ATMcomputingOperations.IATMComputingOperations;
-import org.example.model.ATMCollection;
+import org.example.atm.atmComputingOperations.ATMComputingOperations;
+import org.example.atm.atmComputingOperations.IATMComputingOperations;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Scanner;
 
 public class ATM {
     private String password = "passwordATM";

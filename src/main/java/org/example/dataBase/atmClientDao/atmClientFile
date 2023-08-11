@@ -1,122 +1,82 @@
 [
   {
-    "cardNumber": "1234567812345678",
-    "cardPassword": "1234",
-    "rubleBalance": 1000,
-    "penniesBalance": 50
+    "atmClientCard": {
+      "cardNumber": "1234567890123456",
+      "cardPassword": "1234",
+      "rublesBalance": 1000,
+      "penniesBalance": 50
+    }
   },
   {
-    "cardNumber": "9876543298765432",
-    "cardPassword": "5678",
-    "rubleBalance": 500,
-    "penniesBalance": 25
+    "atmClientCard": {
+      "cardNumber": "9876543210987654",
+      "cardPassword": "5678",
+      "rublesBalance": 500,
+      "penniesBalance": 30
+    }
   },
   {
-    "cardNumber": "5678901256789012",
-    "cardPassword": "4321",
-    "rubleBalance": 750,
-    "penniesBalance": 30
+    "atmClientCard": {
+      "cardNumber": "6543210987654321",
+      "cardPassword": "4321",
+      "rublesBalance": 2000,
+      "penniesBalance": 75
+    }
   },
   {
-    "cardNumber": "5432167854321654",
-    "cardPassword": "7890",
-    "rubleBalance": 300,
-    "penniesBalance": 15
+    "atmClientCard": {
+      "cardNumber": "2345678901234567",
+      "cardPassword": "9876",
+      "rublesBalance": 1500,
+      "penniesBalance": 20
+    }
   },
   {
-    "cardNumber": "1111222233334444",
-    "cardPassword": "1111",
-    "rubleBalance": 2000,
-    "penniesBalance": 80
+    "atmClientCard": {
+      "cardNumber": "8765432109876543",
+      "cardPassword": "2345",
+      "rublesBalance": 3000,
+      "penniesBalance": 10
+    }
   },
   {
-    "cardNumber": "4444333322221111",
-    "cardPassword": "2222",
-    "rubleBalance": 1500,
-    "penniesBalance": 10
+    "atmClientCard": {
+      "cardNumber": "3456789012345678",
+      "cardPassword": "3456",
+      "rublesBalance": 800,
+      "penniesBalance": 90
+    }
   },
   {
-    "cardNumber": "5555666677778888",
-    "cardPassword": "3333",
-    "rubleBalance": 900,
-    "penniesBalance": 75
+    "atmClientCard": {
+      "cardNumber": "7654321098765432",
+      "cardPassword": "6789",
+      "rublesBalance": 1200,
+      "penniesBalance": 60
+    }
   },
   {
-    "cardNumber": "8888777766665555",
-    "cardPassword": "4444",
-    "rubleBalance": 1200,
-    "penniesBalance": 40
+    "atmClientCard": {
+      "cardNumber": "4567890123456789",
+      "cardPassword": "7890",
+      "rublesBalance": 2500,
+      "penniesBalance": 45
+    }
   },
   {
-    "cardNumber": "1010101010101010",
-    "cardPassword": "5555",
-    "rubleBalance": 1800,
-    "penniesBalance": 5
+    "atmClientCard": {
+      "cardNumber": "9876543210123456",
+      "cardPassword": "8901",
+      "rublesBalance": 1800,
+      "penniesBalance": 15
+    }
   },
   {
-    "cardNumber": "2222111133334444",
-    "cardPassword": "6666",
-    "rubleBalance": 2500,
-    "penniesBalance": 90
-  },
-  {
-    "cardNumber": "7777888899990000",
-    "cardPassword": "7777",
-    "rubleBalance": 600,
-    "penniesBalance": 20
-  },
-  {
-    "cardNumber": "9999888877776666",
-    "cardPassword": "8888",
-    "rubleBalance": 700,
-    "penniesBalance": 35
-  },
-  {
-    "cardNumber": "1212121212121212",
-    "cardPassword": "9999",
-    "rubleBalance": 1300,
-    "penniesBalance": 45
-  },
-  {
-    "cardNumber": "3434343434343434",
-    "cardPassword": "0000",
-    "rubleBalance": 100,
-    "penniesBalance": 70
-  },
-  {
-    "cardNumber": "5555444433332222",
-    "cardPassword": "1111",
-    "rubleBalance": 800,
-    "penniesBalance": 60
-  },
-  {
-    "cardNumber": "1234123412341234",
-    "cardPassword": "2222",
-    "rubleBalance": 200,
-    "penniesBalance": 85
-  },
-  {
-    "cardNumber": "5678567856785678",
-    "cardPassword": "3333",
-    "rubleBalance": 950,
-    "penniesBalance": 95
-  },
-  {
-    "cardNumber": "9999666655554444",
-    "cardPassword": "4444",
-    "rubleBalance": 1100,
-    "penniesBalance": 50
-  },
-  {
-    "cardNumber": "4321432143214321",
-    "cardPassword": "5555",
-    "rubleBalance": 0,
-    "penniesBalance": 0
-  },
-  {
-    "cardNumber": "8765876587658765",
-    "cardPassword": "6666",
-    "rubleBalance": 1700,
-    "penniesBalance": 20
+    "atmClientCard": {
+      "cardNumber": "5678901234567890",
+      "cardPassword": "0123",
+      "rublesBalance": 600,
+      "penniesBalance": 80
+    }
   }
 ]

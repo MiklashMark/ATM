@@ -8,19 +8,46 @@ import java.io.BufferedWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Dao<A, O> {
-    protected List<ATMClient> usersList = new ArrayList<>();
-    protected List<ATMCollection> collectionList = new ArrayList<>();
-    ATMCollection collection;
-    protected boolean authorizationIndicator = false;
-    protected final String userDB = "C:\\Users\\markm\\Desktop" +
+public  class Dao {
+    private List<ATMClient> atmClientList = new ArrayList<>();
+    private List<ATMCollection> atmCollectionList = new ArrayList<>();
+    private boolean authorizationIndicator = false;
+    private final String atmClientDB = "C:\\Users\\markm\\Desktop" +
             "\\javaProjectsHome\\ATM\\src\\main\\java\\org\\example\\dataBase\\atmClientFile";
-    protected final String collectionDB = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
+    private final String collectionDB = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
             "\\src\\main\\java\\org\\example\\dataBase\\collectionDao\\collectionFile";
-    protected BufferedReader bufferedReader = null;
-    protected BufferedWriter bufferedWriter = null;
+    private BufferedReader bufferedReader = null;
+    private BufferedWriter bufferedWriter = null;
 
-    public abstract void getAll();
+    public List<ATMClient> getAtmClientList() {
+        return atmClientList;
+    }
 
-    public abstract void isNotFound();
+    public void setAtmClientList(List<ATMClient> atmClientList) {
+        this.atmClientList = atmClientList;
+    }
+
+    public List<ATMCollection> getAtmCollectionList() {
+        return atmCollectionList;
+    }
+
+    public void setAtmCollectionList(List<ATMCollection> atmCollectionList) {
+        this.atmCollectionList = atmCollectionList;
+    }
+
+    public boolean isAuthorizationIndicator() {
+        return authorizationIndicator;
+    }
+
+    public void setAuthorizationIndicator(boolean authorizationIndicator) {
+        this.authorizationIndicator = authorizationIndicator;
+    }
+
+    public String getATMClientDB() {
+        return atmClientDB;
+    }
+
+    public String getCollectionDB() {
+        return collectionDB;
+    }
 }

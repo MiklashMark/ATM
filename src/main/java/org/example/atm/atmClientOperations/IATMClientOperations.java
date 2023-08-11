@@ -1,10 +1,8 @@
 package org.example.atm.atmClientOperations;
 
-import org.example.atm.IATMOperations;
-
 import java.io.IOException;
 
-public interface IUserOperations extends IATMOperations {
+public interface IATMClientOperations {
     void replenishTheBalance();
     void changePinCode();
     void printCheck();

@@ -12,5 +12,4 @@ public interface IATMCollectionOperations  {
     public void checkATMBalance();
     void enterBanknotesNumber();
     void report(Command command) throws IOException;
-    String getATMPassword();
 }

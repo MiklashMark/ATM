@@ -1,14 +1,15 @@
 package org.example.core;
 
+import org.example.dataBase.Dao;
+import org.example.dataBase.atmcollectionDao.ATMCollectionDao;
 import org.example.exception.ATMException;
-import org.example.atm.collectionATMOperations.CollectionOperations;
-import org.example.atm.collectionATMOperations.ICollectionOperations;
-import org.example.atm.userATMOperations.IUserOperations;
-import org.example.atm.userATMOperations.UserOperations;
-import org.example.dataBase.userDao.IUserDao;
-import org.example.dataBase.userDao.UserDao;
-import org.example.model.UserCredentials;
-import org.example.model.User;
+import org.example.atm.atmCollectionOperations.ATMCollectionOperations;
+import org.example.atm.atmCollectionOperations.IATMCollectionOperations;
+import org.example.atm.atmClientOperations.IUserOperations;
+import org.example.atm.atmClientOperations.UserOperations;
+import org.example.model.ATMCollectionCredentials;
+import org.example.model.ATMClientCredentials;
+import org.example.model.ATMClient;
 import org.example.ui.ConsoleUI;
 import org.example.ui.UI;
 
@@ -16,19 +17,22 @@ import java.io.IOException;
 
 public class Core {
     private UI ui;
-    private ICollectionOperations iCollectionOperations;
+    private IATMCollectionOperations iCollectionOperations;
     private IUserOperations iUserOperations;
-    private IUserDao dao;
+    private Dao<A, O> dao;
 
-    private UserCredentials credentials;
-    private User user;
+    private ATMClientCredentials ATMClientCredentials;
+    private ATMCollectionCredentials ATMCollectionCredentials;
+    private ATMClient ATMClient;
 
     public void init() {
         ui = new ConsoleUI();
-        iCollectionOperations = new CollectionOperations();
+        iCollectionOperations = new ATMCollectionOperations();
         iUserOperations = new UserOperations();
-        dao = new UserDao();
-        credentials = new UserCredentials();
+        dao = new ATMCollectionDao();
+        ATMClientCredentials = new ATMClientCredentials();
+        ATMCollectionCredentials = new ATMCollectionCredentials("1234");
+
 
     }
 
@@ -41,7 +45,8 @@ public class Core {
 //                dao.userIsNotFound();
 //            } else break;
 //        }
-        iCollectionOperations.checkBalance();
+        dao.
+
 
 
 

@@ -1,11 +1,10 @@
 package org.example.model;
 
-import java.util.Objects;
-
-public class CollectionCredentials {
+public class ATMCollectionCredentials {
     private String identificationNumber;
+    public ATMCollectionCredentials(){};
 
-    public CollectionCredentials(String identificationNumber) {
+    public ATMCollectionCredentials(String identificationNumber) {
         this.identificationNumber = identificationNumber;
     }
 

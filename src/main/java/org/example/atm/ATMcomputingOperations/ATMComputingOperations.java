@@ -1,13 +1,13 @@
-package org.example.atm.computingATMOperations;
+package org.example.atm.ATMcomputingOperations;
 
-import org.example.atm.collectionATMOperations.CollectionOperations;
+import org.example.atm.ATM;
 import org.example.model.Banknotes;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class ComputingOperations implements IComputingOperations {
+public class ATMComputingOperations implements IATMComputingOperations {
 
     public enum OperationType {
         ADD,
@@ -15,10 +15,9 @@ public class ComputingOperations implements IComputingOperations {
     }
 
     @Override
-    public HashMap<Integer, Integer> getNewBalance(CollectionOperations collectionOperations, OperationType operationType) {
-
-        HashMap<Integer, Integer> actualMapBalance = collectionOperations.getActualATMBalance();
-        HashMap<Integer, Integer> addedMapBalance = collectionOperations.getAddedInATMCash();
+    public HashMap<Integer, Integer> getNewBalance(ATM atm, OperationType operationType) {
+        HashMap<Integer, Integer> actualMapBalance = atm.getActualATMBalance();
+        HashMap<Integer, Integer> addedMapBalance = atm.getAddedInATMCash();
 
         HashMap<Integer, Integer> resultHashMap = new LinkedHashMap<>();
         for (Integer key : actualMapBalance.keySet()) {
@@ -45,7 +44,6 @@ public class ComputingOperations implements IComputingOperations {
 
         return resultHashMap;
     }
-
 
     @Override
     public ArrayList<Banknotes> getBanknotesList() {

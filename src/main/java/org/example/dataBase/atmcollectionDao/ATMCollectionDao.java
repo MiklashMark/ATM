@@ -1,10 +1,10 @@
-package org.example.dataBase.collectionDao;
+package org.example.dataBase.atmcollectionDao;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.example.dataBase.Dao;
-import org.example.model.Collection;
-import org.example.model.CollectionCredentials;
+import org.example.model.ATMCollection;
+import org.example.model.ATMCollectionCredentials;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,12 +13,12 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
-public class CollectionDao extends Dao<CollectionCredentials, Optional<Collection>> implements ICollectionDao {
+public class ATMCollectionDao extends Dao implements IATMCollectionDao {
     @Override
     public void getAll() {
         try(BufferedReader  bufferedReader = new BufferedReader(new FileReader(collectionDB))) {
             Gson gson = new Gson();
-            Type jsonType = new TypeToken<List<Collection>>(){}.getType();
+            Type jsonType = new TypeToken<List<ATMCollection>>(){}.getType();
             collectionList = gson.fromJson(bufferedReader, jsonType);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -31,8 +31,8 @@ public class CollectionDao extends Dao<CollectionCredentials, Optional<Collectio
     }
 
     @Override
-    public Optional<Collection> getCollection(CollectionCredentials collectionCredentials) {
-        return usersList.stream().filter(u->u.getCardNumber().equals(userCredentials.getCardNumber())
-                && u.getCardPassword().equals(userCredentials.getPinCode())).findFirst();
+    public Optional<ATMCollection> getCollection(ATMCollectionCredentials ATMCollectionCredentials) {
+        return collectionList.stream().filter(c -> c.getIdentificationNumber().equals(ATMCollectionCredentials.getIdentificationNumber())
+                && c).findFirst();
     }
 }

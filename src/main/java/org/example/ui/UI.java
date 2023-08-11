@@ -1,10 +1,10 @@
 package org.example.ui;
 
 import org.example.exception.ATMException;
-import org.example.model.UserCredentials;
+import org.example.model.ATMClientCredentials;
 
 public interface UI {
-    UserCredentials showAuthorizationMenu(UserCredentials credentials) throws ATMException;
+    ATMClientCredentials showAuthorizationMenu(ATMClientCredentials credentials) throws ATMException;
     void showWelcomeMenu();
 
 
@@ -12,5 +12,5 @@ public interface UI {
 
     void showBalanceReplenish();
 
-    UserCredentials getCredentials(UserCredentials credentials);
+    ATMClientCredentials getCredentials(ATMClientCredentials credentials);
 }

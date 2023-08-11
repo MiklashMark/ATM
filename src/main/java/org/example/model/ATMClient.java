@@ -1,13 +1,13 @@
 package org.example.model;
 
-public class User {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ATMClient {
    private String cardNumber;
     private String cardPassword;
-
-    private int rubleBalance;
-    private int penniesBalance;
-
-    public User(String cardNumber, String cardPassword) {
+    private List<ATMClientCard> atmClientCardsList = new ArrayList<>();
+    public ATMClient(String cardNumber, String cardPassword) {
         this.cardNumber = cardNumber;
         this.cardPassword = cardPassword;
     }
@@ -28,7 +28,7 @@ public class User {
         return penniesBalance;
     }
 
-    public User() {
+    public ATMClient() {
     }
 
     @Override

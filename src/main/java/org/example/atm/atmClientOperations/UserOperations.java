@@ -1,7 +1,6 @@
-package org.example.atm.userATMOperations;
+package org.example.atm.atmClientOperations;
 
 import org.example.atm.ATM;
-import org.example.atm.IATMOperations;
 
 import java.io.IOException;
 

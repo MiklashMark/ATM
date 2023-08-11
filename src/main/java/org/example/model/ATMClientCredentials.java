@@ -1,19 +1,17 @@
 package org.example.model;
 
-import java.util.Objects;
-
-public class UserCredentials {
+public class ATMClientCredentials {
     private String cardNumber;
     private String pinCode;
 
-    public UserCredentials(String cardNumber, String pinCode) {
+    public ATMClientCredentials(String cardNumber, String pinCode) {
         this.cardNumber = cardNumber;
         this.pinCode = pinCode;
     }
 
-    public UserCredentials(){}
+    public ATMClientCredentials(){}
 
-    public UserCredentials(String cardNumber) {
+    public ATMClientCredentials(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 
@@ -33,7 +31,7 @@ public class UserCredentials {
         this.pinCode = pinCode;
     }
 
-    public UserCredentials getCredentials(UserCredentials credentials){return credentials; }
+    public ATMClientCredentials getCredentials(ATMClientCredentials credentials){return credentials; }
 
     @Override
     public String toString() {

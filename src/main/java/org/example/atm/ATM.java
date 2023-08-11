@@ -1,38 +1,58 @@
 package org.example.atm;
 
-import org.example.atm.computingATMOperations.ComputingOperations;
-import org.example.atm.computingATMOperations.IComputingOperations;
-import org.example.model.Collection;
+import org.example.atm.ATMcomputingOperations.ATMComputingOperations;
+import org.example.atm.ATMcomputingOperations.IATMComputingOperations;
+import org.example.model.ATMCollection;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class ATM {
-    protected String password = "passwordATM";
-    protected Collection collection;
-    protected final IComputingOperations iComputingOperations = new ComputingOperations();
-    protected final String ATMbalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
+    private String password = "passwordATM";
+    private final IATMComputingOperations iATMComputingOperations = new ATMComputingOperations();
+    private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
             "\\main\\java\\org\\example\\atmOperations\\atmBalance";
-    protected final  String collectionReportsPath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
-            "\\src\\main\\java\\org\\example\\atmOperations\\collectionReports";
+    private final  String collectionReportsPath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
+            "\\src\\main\\java\\org\\example\\atmOperations\\atmCollectionReports";
 
-    protected HashMap<Integer, Integer> actualATMBalance = new LinkedHashMap<>();
-    protected HashMap<Integer, Integer> addedInATMCash = new LinkedHashMap<>();
+    private HashMap<Integer, Integer> actualATMBalance = new LinkedHashMap<>();
+    private HashMap<Integer, Integer> addedInATMCash = new LinkedHashMap<>();
+    private int input;
 
 
-    protected Scanner collectionInput = new Scanner(System.in);
-    protected int input;
-
-    public void getCollectionNumber(Collection collection) {
-        this.collection = collection;
+    public String getCollectionReportsPath() {
+        return collectionReportsPath;
     }
 
+    public String getPassword() {
+        return password;
+    }
     public HashMap<Integer, Integer> getActualATMBalance() {
         return actualATMBalance;
     }
 
+    public void setActualATMBalance(HashMap<Integer, Integer> actualATMBalance) {
+        this.actualATMBalance = actualATMBalance;
+    }
+
     public HashMap<Integer, Integer> getAddedInATMCash() {
         return addedInATMCash;
+    }
+
+    public IATMComputingOperations getiATMComputingOperations() {
+        return iATMComputingOperations;
+    }
+
+    public String getAtmBalancePath() {
+        return atmBalancePath;
+    }
+
+    public int getInput() {
+        return input;
+    }
+
+    public void setInput(int input) {
+        this.input = input;
     }
 }

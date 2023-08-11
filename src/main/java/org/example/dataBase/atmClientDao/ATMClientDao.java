@@ -1,26 +1,26 @@
-package org.example.dataBase.userDao;
+package org.example.dataBase.atmClientDao;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.example.dataBase.Dao;
-import org.example.model.User;
-import org.example.model.UserCredentials;
+import org.example.model.ATMClient;
+import org.example.model.ATMClientCredentials;
 
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
-public class UserDao extends Dao<UserCredentials, Optional<User>> implements IUserDao {
+public class ATMClientDao extends Dao<ATMClientCredentials, Optional<ATMClient>> implements IATMClientDao {
 
 
     @Override
-    public void update(User user) {
+    public void update(ATMClient ATMClient) {
         getAll();
 
-        Optional<User> foundUser = usersList.stream().filter(u -> user.getCardPassword().equals(u.getCardPassword())
-                && user.getCardNumber().equals(u.getCardNumber())).findFirst();
-        foundUser.ifPresent(existingUser -> usersList.set(usersList.indexOf(existingUser), user));
+        Optional<ATMClient> foundUser = usersList.stream().filter(u -> ATMClient.getCardPassword().equals(u.getCardPassword())
+                && ATMClient.getCardNumber().equals(u.getCardNumber())).findFirst();
+        foundUser.ifPresent(existingATMClient -> usersList.set(usersList.indexOf(existingATMClient), ATMClient));
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(userDB))) {
             Gson gson = new Gson().newBuilder().setPrettyPrinting().create();
@@ -32,9 +32,9 @@ public class UserDao extends Dao<UserCredentials, Optional<User>> implements IUs
     }
 
     @Override
-    public Optional<User> getUser(UserCredentials userCredentials) {
-        return usersList.stream().filter(u->u.getCardNumber().equals(userCredentials.getCardNumber())
-                && u.getCardPassword().equals(userCredentials.getPinCode())).findFirst();
+    public Optional<ATMClient> getUser(ATMClientCredentials ATMClientCredentials) {
+        return usersList.stream().filter(u->u.getCardNumber().equals(ATMClientCredentials.getCardNumber())
+                && u.getCardPassword().equals(ATMClientCredentials.getPinCode())).findFirst();
     }
 
 
@@ -42,7 +42,7 @@ public class UserDao extends Dao<UserCredentials, Optional<User>> implements IUs
     public void getAll() {
         try( BufferedReader bufferedReader = new BufferedReader(new FileReader(userDB))) {
             Gson gson = new Gson();
-            Type jsonType = new TypeToken<List<User>>() {
+            Type jsonType = new TypeToken<List<ATMClient>>() {
             }.getType();
             usersList = gson.fromJson(bufferedReader, jsonType);
         } catch (IOException e) {

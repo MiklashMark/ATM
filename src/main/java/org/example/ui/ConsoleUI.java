@@ -1,6 +1,6 @@
 package org.example.ui;
 
-import org.example.exception.ATMException;
+import org.example.exception.Exception;
 import org.example.model.ATMClientCredentials;
 
 import java.util.Scanner;
@@ -20,7 +20,7 @@ public class ConsoleUI implements UI {
     Pattern pinCodePattern = Pattern.compile("\\d{4}");
 
     @Override
-    public ATMClientCredentials showAuthorizationMenu(ATMClientCredentials credentials) throws ATMException {
+    public ATMClientCredentials showAuthorizationMenu(ATMClientCredentials credentials) throws Exception {
         validInput = false;
         switch (choice) {
             case 1 -> {

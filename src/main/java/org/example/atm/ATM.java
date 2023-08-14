@@ -1,14 +1,14 @@
 package org.example.atm;
 
-import org.example.atm.atmComputingOperations.ATMComputingOperations;
-import org.example.atm.atmComputingOperations.IATMComputingOperations;
+import org.example.atm.atmComputingOperations.ComputingOperations;
+import org.example.atm.atmComputingOperations.IComputingOperations;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class ATM {
     private String password = "passwordATM";
-    private final IATMComputingOperations iATMComputingOperations = new ATMComputingOperations();
+    private final IComputingOperations iATMComputingOperations = new ComputingOperations();
     private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
             "\\main\\java\\org\\example\\atmOperations\\atmBalance";
     private final  String collectionReportsPath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
@@ -38,7 +38,7 @@ public class ATM {
         return addedInATMCash;
     }
 
-    public IATMComputingOperations getiATMComputingOperations() {
+    public IComputingOperations getIATMComputingOperations() {
         return iATMComputingOperations;
     }
 

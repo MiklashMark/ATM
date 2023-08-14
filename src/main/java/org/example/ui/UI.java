@@ -1,10 +1,10 @@
 package org.example.ui;
 
-import org.example.exception.ATMException;
+import org.example.exception.Exception;
 import org.example.model.ATMClientCredentials;
 
 public interface UI {
-    ATMClientCredentials showAuthorizationMenu(ATMClientCredentials credentials) throws ATMException;
+    ATMClientCredentials showAuthorizationMenu(ATMClientCredentials credentials) throws Exception;
     void showWelcomeMenu();
 
 

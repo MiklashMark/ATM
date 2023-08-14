@@ -2,20 +2,20 @@ package org.example.model;
 
 public class ATMClient {
 
-    private atmClientCard atmClientCard;
+    private ClientCard clientCard;
 
 
     public ATMClient() {
     }
 
-    public org.example.model.atmClientCard getATMClientCard() {
-        return atmClientCard;
+    public ClientCard getATMClientCard() {
+        return clientCard;
     }
 
     @Override
     public String toString() {
         return "ATMClient{" +
-                "atmClientCardsList=" + atmClientCard +
+                "atmClientCardsList=" + clientCard +
                 '}';
     }
 }

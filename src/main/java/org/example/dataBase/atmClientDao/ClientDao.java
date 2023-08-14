@@ -11,12 +11,12 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
-public class ATMClientDao implements IATMClientDao {
+public class ClientDao implements IClientDao {
 
     private Dao dao = new Dao();
     @Override
     public Optional<ATMClient> getATMClient(ATMClientCredentials ATMClientCredentials) {
-        return dao.getAtmClientList().stream().filter(u->u.getATMClientCard().getCardNumber().equals(ATMClientCredentials.getCardNumber())
+        return dao.getATMClientList().stream().filter(u->u.getATMClientCard().getCardNumber().equals(ATMClientCredentials.getCardNumber())
                 && u.getATMClientCard().getCardPassword().equals(ATMClientCredentials.getPinCode())).findFirst();
     }
 
@@ -27,7 +27,7 @@ public class ATMClientDao implements IATMClientDao {
             Gson gson = new Gson();
             Type jsonType = new TypeToken<List<ATMClient>>() {
             }.getType();
-            dao.setAtmClientList(gson.fromJson(bufferedReader, jsonType));
+            dao.setATMClientList(gson.fromJson(bufferedReader, jsonType));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

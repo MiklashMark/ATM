@@ -1,14 +1,14 @@
 package org.example.exception;
 
-public class ATMException extends Exception {
+public class Exception extends java.lang.Exception {
 
     private String message;
     private int errorCode;
-    public ATMException(String message) {
+    public Exception(String message) {
         super(message);
     }
 
-    public ATMException(String message, int errorCode) {
+    public Exception(String message, int errorCode) {
         super(message);
         this.errorCode = errorCode;
     }

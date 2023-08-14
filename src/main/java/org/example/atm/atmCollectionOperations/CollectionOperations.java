@@ -1,7 +1,7 @@
 package org.example.atm.atmCollectionOperations;
 
 import org.example.atm.ATM;
-import org.example.atm.atmComputingOperations.ATMComputingOperations;
+import org.example.atm.atmComputingOperations.ComputingOperations;
 import org.example.model.ATMCollection;
 import org.example.model.Banknotes;
 import org.example.model.Command;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class ATMCollectionOperations implements IATMCollectionOperations {
+public class CollectionOperations implements ICollectionOperations {
 
     private ATM atm = new ATM();
     private ATMCollection atmCollection = new ATMCollection();
@@ -24,8 +24,8 @@ public class ATMCollectionOperations implements IATMCollectionOperations {
         enterBanknotesNumber();
         checkATMBalance();
 
-        atm.setActualATMBalance(atm.getiATMComputingOperations()
-                .getNewBalance(atm, ATMComputingOperations.OperationType.ADD));
+        atm.setActualATMBalance(atm.getIATMComputingOperations()
+                .getNewBalance(atm, ComputingOperations.OperationType.ADD));
         report(Command.COLLECTION_MENU_ADD_CASH);
 
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
@@ -37,7 +37,7 @@ public class ATMCollectionOperations implements IATMCollectionOperations {
 
     @Override
     public void enterBanknotesNumber() {
-        ArrayList<Banknotes> banknotesArrayList = atm.getiATMComputingOperations().getBanknotesList();
+        ArrayList<Banknotes> banknotesArrayList = atm.getIATMComputingOperations().getBanknotesList();
 
         for (Banknotes banknotes : banknotesArrayList) {
             System.out.println("Enter the numerous of " + banknotes + " rubles banknotes : ");
@@ -73,8 +73,8 @@ public class ATMCollectionOperations implements IATMCollectionOperations {
     @Override
     public void getCash() throws IOException {
         enterBanknotesNumber();
-        atm.setActualATMBalance(atm.getiATMComputingOperations().getNewBalance(atm,
-                ATMComputingOperations.OperationType.SUBTRACT));
+        atm.setActualATMBalance(atm.getIATMComputingOperations().getNewBalance(atm,
+                ComputingOperations.OperationType.SUBTRACT));
         report(Command.COLLECTION_MENU_GET_CASH);
 
     }

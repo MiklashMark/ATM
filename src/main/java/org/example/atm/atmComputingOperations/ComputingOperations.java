@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class ATMComputingOperations implements IATMComputingOperations {
+public class ComputingOperations implements IComputingOperations {
 
     public enum OperationType {
         ADD,

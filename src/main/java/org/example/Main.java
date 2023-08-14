@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.exception.ATMException;
+import org.example.exception.Exception;
 import org.example.core.Core;
 
 import java.io.*;
@@ -12,7 +12,7 @@ public class Main {
         Core core = new Core();
         try {
             core.start();
-        } catch (ATMException | IOException e) {
+        } catch (Exception | IOException e) {
             throw new RuntimeException(e);
         }
     }

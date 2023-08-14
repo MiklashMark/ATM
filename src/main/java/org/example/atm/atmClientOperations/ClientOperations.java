@@ -1,19 +1,20 @@
 package org.example.atm.atmClientOperations;
 
 import org.example.atm.ATM;
+import org.example.model.ATMClient;
 
 import java.io.IOException;
 
-public class ATMClientOperations extends ATM implements IATMClientOperations {
-
+public class ClientOperations implements IClientOperations {
+    ATMClient atmClient = new ATMClient();
     @Override
-    public void replenishTheBalance() {
+    public void replenishTheBalance(ATM atm, int money) {
 
     }
 
     @Override
-    public void changePinCode() {
-
+    public void changePinCode(String newPinCode) {
+        atmClient.getATMClientCard().setCardPassword(newPinCode);
     }
 
     @Override

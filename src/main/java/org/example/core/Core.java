@@ -1,14 +1,14 @@
 package org.example.core;
 
-import org.example.dataBase.atmClientDao.ATMClientDao;
-import org.example.dataBase.atmClientDao.IATMClientDao;
-import org.example.dataBase.atmcollectionDao.ATMCollectionDao;
-import org.example.dataBase.atmcollectionDao.IATMCollectionDao;
-import org.example.exception.ATMException;
-import org.example.atm.atmCollectionOperations.ATMCollectionOperations;
-import org.example.atm.atmCollectionOperations.IATMCollectionOperations;
-import org.example.atm.atmClientOperations.IATMClientOperations;
-import org.example.atm.atmClientOperations.ATMClientOperations;
+import org.example.dataBase.atmClientDao.ClientDao;
+import org.example.dataBase.atmClientDao.IClientDao;
+import org.example.dataBase.atmCollectionDao.CollectionDao;
+import org.example.dataBase.atmCollectionDao.ICollectionDao;
+import org.example.exception.Exception;
+import org.example.atm.atmCollectionOperations.CollectionOperations;
+import org.example.atm.atmCollectionOperations.ICollectionOperations;
+import org.example.atm.atmClientOperations.IClientOperations;
+import org.example.atm.atmClientOperations.ClientOperations;
 import org.example.model.ATMCollectionCredentials;
 import org.example.model.ATMClientCredentials;
 import org.example.model.ATMClient;
@@ -19,28 +19,28 @@ import java.io.IOException;
 
 public class Core {
     private UI ui;
-    private IATMCollectionOperations iCollectionOperations;
-    private IATMClientOperations iATMClientOperations;
-    private IATMCollectionDao atmCollectionDao;
-    private IATMClientDao atmClientDao;
+    private ICollectionOperations iCollectionOperations;
+    private IClientOperations iATMClientOperations;
+    private ICollectionDao atmCollectionDao;
+    private IClientDao atmClientDao;
     private ATMClientCredentials iATMClientCredentials;
     private ATMCollectionCredentials iATMCollectionCredentials;
     private ATMClient atmClient;
 
     public void init() {
         ui = new ConsoleUI();
-        iCollectionOperations = new ATMCollectionOperations();
-        iATMClientOperations = new ATMClientOperations();
+        iCollectionOperations = new CollectionOperations();
+        iATMClientOperations = new ClientOperations();
         iATMClientCredentials = new ATMClientCredentials();
         iATMCollectionCredentials = new ATMCollectionCredentials("1234");
-        atmClientDao = new ATMClientDao();
-        atmCollectionDao = new ATMCollectionDao();
+        atmClientDao = new ClientDao();
+        atmCollectionDao = new CollectionDao();
 
 
 
     }
 
-    public void start() throws ATMException, IOException {
+    public void start() throws Exception, IOException {
         init();
 //        ui.showWelcomeMenu();
 //        while (user == null) {

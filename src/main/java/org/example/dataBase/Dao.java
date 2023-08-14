@@ -9,30 +9,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class Dao {
-    private List<ATMClient> atmClientList = new ArrayList<>();
-    private List<ATMCollection> atmCollectionList = new ArrayList<>();
-    private boolean authorizationIndicator = false;
+    private List<ATMClient> atmClients = new ArrayList<>();
+    private List<ATMCollection> atmCollections =  new ArrayList<>();
+
     private final String atmClientDB = "C:\\Users\\markm\\Desktop" +
             "\\javaProjectsHome\\ATM\\src\\main\\java\\org\\example\\dataBase\\atmClientFile";
     private final String collectionDB = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
             "\\src\\main\\java\\org\\example\\dataBase\\collectionDao\\collectionFile";
+
     private BufferedReader bufferedReader = null;
     private BufferedWriter bufferedWriter = null;
 
-    public List<ATMClient> getAtmClientList() {
-        return atmClientList;
+    private boolean authorizationIndicator = false;
+
+
+    public List<ATMClient> getATMClientList() {
+        return atmClients;
     }
 
-    public void setAtmClientList(List<ATMClient> atmClientList) {
-        this.atmClientList = atmClientList;
+    public void setATMClientList(List<ATMClient> atmClientList) {
+        this.atmClients = atmClientList;
     }
 
-    public List<ATMCollection> getAtmCollectionList() {
-        return atmCollectionList;
+    public List<ATMCollection> getATMCollectionList() {
+        return atmCollections;
     }
 
-    public void setAtmCollectionList(List<ATMCollection> atmCollectionList) {
-        this.atmCollectionList = atmCollectionList;
+    public void setATMCollectionList(List<ATMCollection> atmCollectionList) {
+        this.atmCollections = atmCollectionList;
     }
 
     public boolean isAuthorizationIndicator() {

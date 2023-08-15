@@ -12,6 +12,15 @@ import java.util.LinkedHashMap;
 
 public class ATM implements IATMOperations {
     private String password = "passwordATM";
+    private final IComputingOperations iATMComputingOperations = new ComputingOperations();
+    private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
+            "\\main\\java\\org\\example\\atmOperations\\atmBalance";
+    private final String collectionReportsPath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
+            "\\src\\main\\java\\org\\example\\atmOperations\\atmCollectionReports";
+
+    private HashMap<Integer, Integer> actualATMBalance = new LinkedHashMap<>();
+    private HashMap<Integer, Integer> addedInATMCash = new LinkedHashMap<>();
+
 
 
     @Override
@@ -27,6 +36,7 @@ public class ATM implements IATMOperations {
             throw new RuntimeException(e);
         }
     }
+
 
     @Override
     public void setNewBalance(ComputingOperations.OperationType operationType) {
@@ -55,14 +65,6 @@ public class ATM implements IATMOperations {
         }
     }
 
-    private final IComputingOperations iATMComputingOperations = new ComputingOperations();
-    private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
-            "\\main\\java\\org\\example\\atmOperations\\atmBalance";
-    private final String collectionReportsPath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
-            "\\src\\main\\java\\org\\example\\atmOperations\\atmCollectionReports";
-
-    private HashMap<Integer, Integer> actualATMBalance = new LinkedHashMap<>();
-    private HashMap<Integer, Integer> addedInATMCash = new LinkedHashMap<>();
 
 
     public String getCollectionReportsPath() {

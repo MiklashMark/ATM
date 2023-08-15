@@ -15,7 +15,6 @@ public class CollectionOperations implements ICollectionOperations {
     private ATM atm = new ATM();
     private ATMCollection atmCollection = new ATMCollection();
     private Scanner collectionInput = new Scanner(System.in);
-    private int banknotesNumber;
 
     @Override
     public void addCash() throws IOException {
@@ -28,14 +27,14 @@ public class CollectionOperations implements ICollectionOperations {
     @Override
     public void enterBanknotesNumber() {
         ArrayList<Banknotes> banknotesArrayList = atm.getIATMComputingOperations().getBanknotesList();
-
+        int banknotesNumber;
         for (Banknotes banknotes : banknotesArrayList) {
             System.out.println("Enter the numerous of " + banknotes + " rubles banknotes : ");
             banknotesNumber = collectionInput.nextInt();
             atm.getAddedInATMCash().put(banknotes.getValue(), banknotesNumber);
         }
     }
-//
+
 
     @Override
     public void report(Command command) throws IOException {

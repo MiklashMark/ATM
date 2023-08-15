@@ -10,5 +10,5 @@ public interface IClientOperations {
     void changePinCode(String newPinCode);
     void printCheck();
     public void getCash() throws IOException;
-    public void checkBalance();
+    public double checkCardBalance();
 }

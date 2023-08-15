@@ -24,7 +24,7 @@ public class ATM implements IATMOperations {
 
 
     @Override
-    public void getActualBalance() {
+    public void readActualATMBalanceFromFile() {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(
                 new FileInputStream(this.getAtmBalancePath()))) {
             Object object = objectInputStream.readObject();
@@ -39,7 +39,7 @@ public class ATM implements IATMOperations {
 
 
     @Override
-    public void setNewBalance(ComputingOperations.OperationType operationType) {
+    public void writeActualATMBalanceToFile(ComputingOperations.OperationType operationType) {
         this.setActualATMBalance(this.getIATMComputingOperations()
                 .getNewBalance(this, operationType));
 
@@ -51,7 +51,7 @@ public class ATM implements IATMOperations {
         }
     }
 
-    public void writeCollection(Command command, ATMCollection atmCollection) {
+    public void writeCollectionReportToFile(Command command, ATMCollection atmCollection) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter(this.getCollectionReportsPath(), true))) {
 

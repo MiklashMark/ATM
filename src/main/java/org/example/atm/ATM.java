@@ -45,9 +45,4 @@ public class ATM implements IATMOperations{
     public String getAtmBalancePath() {
         return atmBalancePath;
     }
-
-
-
-
-
 }

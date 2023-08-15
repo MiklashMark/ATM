@@ -6,8 +6,6 @@ import org.example.dataBase.atmCollectionDao.CollectionDao;
 import org.example.dataBase.atmCollectionDao.ICollectionDao;
 import org.example.exception.Exception;
 import org.example.atm.atmCollectionOperations.CollectionOperations;
-import org.example.atm.atmCollectionOperations.ICollectionOperations;
-import org.example.atm.atmClientOperations.IClientOperations;
 import org.example.atm.atmClientOperations.ClientOperations;
 import org.example.model.ATMCollectionCredentials;
 import org.example.model.ATMClientCredentials;
@@ -19,8 +17,8 @@ import java.io.IOException;
 
 public class Core {
     private UI ui;
-    private ICollectionOperations iCollectionOperations;
-    private IClientOperations iATMClientOperations;
+    private CollectionOperationsImp collectionOperationsImp;
+    private ClientOperations ATMIClientOperations;
     private ICollectionDao atmCollectionDao;
     private IClientDao atmClientDao;
     private ATMClientCredentials iATMClientCredentials;
@@ -29,8 +27,8 @@ public class Core {
 
     public void init() {
         ui = new ConsoleUI();
-        iCollectionOperations = new CollectionOperations();
-        iATMClientOperations = new ClientOperations();
+        collectionOperationsImp = new CollectionOperations();
+        ATMIClientOperations = new ClientOperationsImp();
         iATMClientCredentials = new ATMClientCredentials();
         iATMCollectionCredentials = new ATMCollectionCredentials("1234");
         atmClientDao = new ClientDao();
@@ -49,7 +47,6 @@ public class Core {
 //                dao.userIsNotFound();
 //            } else break;
 //        }
-
 
 
     }

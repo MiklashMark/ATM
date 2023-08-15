@@ -41,7 +41,7 @@ public class CollectionOperations implements ICollectionOperations {
 
     @Override
     public void report(Command command) throws IOException {
-        atm.collectionReport(command, atmCollection);
+        atm.writeCollection(command, atmCollection);
     }
 
 

@@ -6,7 +6,7 @@ import org.example.atm.atmComputingOperations.IComputingOperations;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class ATM {
+public class ATM implements IATMOperations{
     private String password = "passwordATM";
     private final IComputingOperations iATMComputingOperations = new ComputingOperations();
     private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
@@ -16,7 +16,7 @@ public class ATM {
 
     private HashMap<Integer, Integer> actualATMBalance = new LinkedHashMap<>();
     private HashMap<Integer, Integer> addedInATMCash = new LinkedHashMap<>();
-    private int input;
+
 
 
     public String getCollectionReportsPath() {
@@ -46,11 +46,5 @@ public class ATM {
         return atmBalancePath;
     }
 
-    public int getInput() {
-        return input;
-    }
 
-    public void setInput(int input) {
-        this.input = input;
-    }
 }

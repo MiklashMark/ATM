@@ -65,6 +65,7 @@ public class CollectionOperations implements ICollectionOperations {
     }
 
 
+
     @Override
     public String getATMPassword() {
         return atm.getPassword();

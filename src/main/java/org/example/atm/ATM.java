@@ -46,5 +46,8 @@ public class ATM implements IATMOperations{
         return atmBalancePath;
     }
 
+    public void input(){
+
+    }
 
 }

@@ -49,19 +49,7 @@ public class CollectionOperations implements ICollectionOperations {
 
     @Override
     public void report(Command command) throws IOException {
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(atm.getCollectionReportsPath(), true))) {
-            switch (command.getValue()) {
-                case 1 ->
-                        bufferedWriter.write("COLLECTION NUMBER : " + atmCollection.getIdentificationNumber() + " OPERATION : " + Command.AUTHORIZATION_MENU_CHECK_BALANCE
-                                + " \nTIME : " + LocalDateTime.now() + "\n");
-                case 2 ->
-                        bufferedWriter.write("COLLECTION NUMBER : " + atmCollection.getIdentificationNumber() + " OPERATION : " + Command.COLLECTION_MENU_ADD_CASH
-                                + " \nTIME : " + LocalDateTime.now() + "\n");
-                case 3 ->
-                        bufferedWriter.write("COLLECTION NUMBER : " + atmCollection.getIdentificationNumber() + " OPERATION : " + Command.COLLECTION_MENU_CHECK_BALANCE
-                                + " \nTIME : " + LocalDateTime.now() + "\n");
-            }
-        }
+       atm.collectionReport(command,atmCollection);
     }
 
 

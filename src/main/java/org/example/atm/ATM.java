@@ -2,12 +2,40 @@ package org.example.atm;
 
 import org.example.atm.atmComputingOperations.ComputingOperations;
 import org.example.atm.atmComputingOperations.IComputingOperations;
+import org.example.model.ATMCollection;
+import org.example.model.Command;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class ATM implements IATMOperations{
     private String password = "passwordATM";
+
+
+    @Override
+    public void getActualBalance() {
+
+    }
+
+    @Override
+    public void setNewBalance() {
+
+    }
+
+    @Override
+    public void collectionReport(Command command, ATMCollection atmCollection) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.getCollectionReportsPath(), true))) {
+            bufferedWriter.write( "COLLECTION NUMBER : " + atmCollection.getIdentificationNumber() + " OPERATION : " + command.toString()
+                    + " \nTIME : " + LocalDateTime.now() + "\n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private final IComputingOperations iATMComputingOperations = new ComputingOperations();
     private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
             "\\main\\java\\org\\example\\atmOperations\\atmBalance";

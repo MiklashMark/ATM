@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class ATM implements IATMOperations{
+public class ATM implements IATMOperations {
     private String password = "passwordATM";
 
 
@@ -27,9 +27,14 @@ public class ATM implements IATMOperations{
     }
 
     public void writeCollection(Command command, ATMCollection atmCollection) {
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.getCollectionReportsPath(), true))) {
-            bufferedWriter.write( "COLLECTION NUMBER : " + atmCollection.getIdentificationNumber() + " OPERATION : " + command.toString()
+        try (BufferedWriter bufferedWriter = new BufferedWriter(
+                new FileWriter(this.getCollectionReportsPath(), true))) {
+
+            bufferedWriter.write("COLLECTION NUMBER : "
+                    + atmCollection.getIdentificationNumber()
+                    + " OPERATION : " + command.toString()
                     + " \nTIME : " + LocalDateTime.now() + "\n");
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -38,12 +43,11 @@ public class ATM implements IATMOperations{
     private final IComputingOperations iATMComputingOperations = new ComputingOperations();
     private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +
             "\\main\\java\\org\\example\\atmOperations\\atmBalance";
-    private final  String collectionReportsPath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
+    private final String collectionReportsPath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM" +
             "\\src\\main\\java\\org\\example\\atmOperations\\atmCollectionReports";
 
     private HashMap<Integer, Integer> actualATMBalance = new LinkedHashMap<>();
     private HashMap<Integer, Integer> addedInATMCash = new LinkedHashMap<>();
-
 
 
     public String getCollectionReportsPath() {
@@ -53,6 +57,7 @@ public class ATM implements IATMOperations{
     public String getPassword() {
         return password;
     }
+
     public HashMap<Integer, Integer> getActualATMBalance() {
         return actualATMBalance;
     }

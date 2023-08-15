@@ -1,7 +1,7 @@
 package org.example.atm;
 
-import org.example.atm.atmComputingOperations.ComputingOperations;
-import org.example.atm.atmComputingOperations.IComputingOperations;
+import org.example.atm.ComputingOperations.ComputingOperations;
+import org.example.atm.ComputingOperations.IComputingOperations;
 import org.example.model.ATMCollection;
 import org.example.model.Command;
 

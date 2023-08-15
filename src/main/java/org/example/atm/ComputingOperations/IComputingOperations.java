@@ -1,4 +1,4 @@
-package org.example.atm.atmComputingOperations;
+package org.example.atm.ComputingOperations;
 
 import org.example.atm.ATM;
 import org.example.model.Banknotes;

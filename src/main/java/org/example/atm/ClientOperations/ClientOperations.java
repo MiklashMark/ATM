@@ -1,4 +1,5 @@
-package org.example.atm.atmClientOperations;
+package org.example.atm.ClientOperations;
+import org.example.atm.atmClientOperations.IClientOperations;
 
 import org.example.atm.ATM;
 import org.example.model.ATMClient;

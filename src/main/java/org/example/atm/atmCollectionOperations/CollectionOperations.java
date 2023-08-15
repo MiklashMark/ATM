@@ -37,7 +37,7 @@ public class CollectionOperations implements ICollectionOperations {
             atm.getAddedInATMCash().put(banknotes.getValue(), banknotesNumber);
         }
     }
-
+//
 
     @Override
     public void report(Command command) throws IOException {

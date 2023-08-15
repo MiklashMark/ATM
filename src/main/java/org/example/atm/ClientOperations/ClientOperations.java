@@ -1,4 +1,4 @@
-package org.example.atm.ClientOperations;
+package org.example.atm.atmClientOperations;
 
 import org.example.atm.ATM;
 import org.example.model.ATMClient;
@@ -6,9 +6,10 @@ import org.example.model.ATMClient;
 import java.io.IOException;
 
 public class ClientOperations implements IClientOperations {
-    ATMClient atmClient = new ATMClient();
+    ATMClient atmClient;
+
     @Override
-    public void replenishBalance(ATM atm, int money) {
+    public void replenishTheBalance(ATM atm, int money) {
 
     }
 
@@ -22,13 +23,18 @@ public class ClientOperations implements IClientOperations {
 
     }
 
+    public void setAtmClient(ATMClient atmClient) {
+        this.atmClient = atmClient;
+    }
+
     @Override
     public void getCash() throws IOException {
 
     }
 
     @Override
-    public void checkCardBalance() {
-
+    public double checkCardBalance() {
+        return atmClient.getATMClientCard().getRublesBalance()
+                + atmClient.getATMClientCard().getPenniesBalance() * 0.01;
     }
 }

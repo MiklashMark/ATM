@@ -1,4 +1,4 @@
-package org.example.atm.atmCollectionOperations;
+package org.example.atm.CollectionOperations;
 
 import org.example.model.Command;
 

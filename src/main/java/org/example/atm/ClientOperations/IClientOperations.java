@@ -1,14 +1,13 @@
-package org.example.atm.atmClientOperations;
+package org.example.atm.ClientOperations;
 
 import org.example.atm.ATM;
-import org.example.model.ATMClient;
 
 import java.io.IOException;
 
 public interface IClientOperations {
-    void replenishTheBalance(ATM atm, int money);
+    void replenishBalance(ATM atm, int money);
     void changePinCode(String newPinCode);
     void printCheck();
     public void getCash() throws IOException;
-    public void checkBalance();
+    public void checkCardBalance();
 }

@@ -22,7 +22,6 @@ public class ATM implements IATMOperations {
     private HashMap<Integer, Integer> addedInATMCash = new LinkedHashMap<>();
 
 
-
     @Override
     public void readActualATMBalanceFromFile() {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(

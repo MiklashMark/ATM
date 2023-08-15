@@ -1,4 +1,4 @@
-package org.example.atm.atmCollectionOperations;
+package org.example.atm.CollectionOperations;
 
 import org.example.atm.ATM;
 import org.example.atm.atmComputingOperations.ComputingOperations;
@@ -13,9 +13,7 @@ import java.util.Scanner;
 public class CollectionOperations implements ICollectionOperations {
 
     private ATM atm = new ATM();
-    private ATMCollection atmCollection = new ATMCollection();
-    private Scanner collectionInput = new Scanner(System.in);
-    private int banknotesNumber;
+    private ATMCollection atmCollection;
 
     @Override
     public void addCash() throws IOException {
@@ -28,10 +26,11 @@ public class CollectionOperations implements ICollectionOperations {
     @Override
     public void enterBanknotesNumber() {
         ArrayList<Banknotes> banknotesArrayList = atm.getIATMComputingOperations().getBanknotesList();
-
+        Scanner scanner = new Scanner(System.in);
+        int banknotesNumber;
         for (Banknotes banknotes : banknotesArrayList) {
             System.out.println("Enter the numerous of " + banknotes + " rubles banknotes : ");
-            banknotesNumber = collectionInput.nextInt();
+            banknotesNumber = scanner.nextInt();
             atm.getAddedInATMCash().put(banknotes.getValue(), banknotesNumber);
         }
     }
@@ -61,5 +60,9 @@ public class CollectionOperations implements ICollectionOperations {
     public void checkATMBalance() throws IOException {
         atm.readActualATMBalanceFromFile();
         report(Command.COLLECTION_MENU_CHECK_BALANCE);
+    }
+
+    public void setAtmCollection(ATMCollection atmCollection) {
+        this.atmCollection = atmCollection;
     }
 }

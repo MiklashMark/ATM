@@ -6,10 +6,10 @@ import org.example.model.ATMCollection;
 import org.example.model.Banknotes;
 import org.example.model.Command;
 
-import java.io.*;
-import java.time.LocalDateTime;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class CollectionOperations implements ICollectionOperations {
@@ -23,16 +23,8 @@ public class CollectionOperations implements ICollectionOperations {
     public void addCash() throws IOException {
         enterBanknotesNumber();
         checkATMBalance();
-
-        atm.setActualATMBalance(atm.getIATMComputingOperations()
-                .getNewBalance(atm, ComputingOperations.OperationType.ADD));
+        atm.setNewBalance(ComputingOperations.OperationType.ADD);
         report(Command.COLLECTION_MENU_ADD_CASH);
-
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream(atm.getAtmBalancePath()))) {
-            objectOutputStream.writeObject(atm.getActualATMBalance());
-        }
-
     }
 
     @Override
@@ -49,9 +41,8 @@ public class CollectionOperations implements ICollectionOperations {
 
     @Override
     public void report(Command command) throws IOException {
-       atm.collectionReport(command,atmCollection);
+        atm.collectionReport(command, atmCollection);
     }
-
 
 
     @Override
@@ -69,18 +60,8 @@ public class CollectionOperations implements ICollectionOperations {
     }
 
     @Override
-    public void checkATMBalance() {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream(atm.getAtmBalancePath()))) {
-            Object object = objectInputStream.readObject();
-
-            if (object instanceof HashMap) {
-                atm.setActualATMBalance((HashMap<Integer, Integer>) object);
-            }
-            report(Command.COLLECTION_MENU_CHECK_BALANCE);
-
-        } catch (ClassNotFoundException | IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void checkATMBalance() throws IOException {
+        atm.getActualBalance();
+        report(Command.COLLECTION_MENU_CHECK_BALANCE);
     }
 }

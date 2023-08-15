@@ -5,9 +5,7 @@ import org.example.atm.atmComputingOperations.IComputingOperations;
 import org.example.model.ATMCollection;
 import org.example.model.Command;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -18,12 +16,29 @@ public class ATM implements IATMOperations{
 
     @Override
     public void getActualBalance() {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(
+                new FileInputStream(this.getAtmBalancePath()))) {
+            Object object = objectInputStream.readObject();
 
+            if (object instanceof HashMap) {
+                this.setActualATMBalance((HashMap<Integer, Integer>) object);
+            }
+        } catch (ClassNotFoundException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public void setNewBalance() {
+    public void setNewBalance(ComputingOperations.OperationType operationType) {
+        this.setActualATMBalance(this.getIATMComputingOperations()
+                .getNewBalance(this, operationType));
 
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+                new FileOutputStream(this.getAtmBalancePath()))) {
+            objectOutputStream.writeObject(this.getActualATMBalance());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

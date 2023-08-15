@@ -8,7 +8,7 @@ import java.io.IOException;
 public interface IATMOperations {
     void getActualBalance();
     void setNewBalance();
-    void collectionReport(Command command, ATMCollection atmCollection);
+    void writeCollection(Command command, ATMCollection atmCollection);
 
 
 

@@ -7,7 +7,6 @@ import org.example.model.Banknotes;
 import org.example.model.Command;
 
 import java.io.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -49,7 +48,7 @@ public class CollectionOperations implements ICollectionOperations {
 
     @Override
     public void report(Command command) throws IOException {
-       atm.collectionReport(command,atmCollection);
+       atm.writeCollection(command,atmCollection);
     }
 
 

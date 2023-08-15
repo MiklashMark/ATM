@@ -26,8 +26,7 @@ public class ATM implements IATMOperations{
 
     }
 
-    @Override
-    public void collectionReport(Command command, ATMCollection atmCollection) {
+    public void writeCollection(Command command, ATMCollection atmCollection) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.getCollectionReportsPath(), true))) {
             bufferedWriter.write( "COLLECTION NUMBER : " + atmCollection.getIdentificationNumber() + " OPERATION : " + command.toString()
                     + " \nTIME : " + LocalDateTime.now() + "\n");

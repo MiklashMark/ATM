@@ -6,9 +6,7 @@ import org.example.model.ATMCollection;
 import org.example.model.Banknotes;
 import org.example.model.Command;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,7 +21,7 @@ public class CollectionOperations implements ICollectionOperations {
     public void addCash() throws IOException {
         enterBanknotesNumber();
         checkATMBalance();
-        atm.setNewBalance(ComputingOperations.OperationType.ADD);
+        atm.writeActualATMBalanceToFile(ComputingOperations.OperationType.ADD);
         report(Command.COLLECTION_MENU_ADD_CASH);
     }
 
@@ -41,7 +39,7 @@ public class CollectionOperations implements ICollectionOperations {
 
     @Override
     public void report(Command command) throws IOException {
-        atm.writeCollection(command, atmCollection);
+        atm.writeCollectionReportToFile(command, atmCollection);
     }
 
 
@@ -61,7 +59,7 @@ public class CollectionOperations implements ICollectionOperations {
 
     @Override
     public void checkATMBalance() throws IOException {
-        atm.getActualBalance();
+        atm.readActualATMBalanceFromFile();
         report(Command.COLLECTION_MENU_CHECK_BALANCE);
     }
 }

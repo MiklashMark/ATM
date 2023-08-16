@@ -8,6 +8,12 @@ import java.io.IOException;
 
 public class ClientOperations implements IClientOperations {
     ATMClient atmClient;
+    // TODO Mark : replenishTheBalance, PrintChack;
+    // TODO Dima : getCash;
+
+    // All computing operations should be realized in ComputingOperation class
+    // Dima : create ATM method, which should be call DB and update ATMClient information in DB
+
 
     @Override
     public void replenishTheBalance(ATM atm, int money) {

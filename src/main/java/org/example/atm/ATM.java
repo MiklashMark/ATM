@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class ATM implements IATMOperations {
+public class ATM implements IATMOperations  {
     private String password = "passwordATM";
     private final IComputingOperations iATMComputingOperations = new ComputingOperations();
     private final String atmBalancePath = "C:\\Users\\markm\\Desktop\\javaProjectsHome\\ATM\\src" +

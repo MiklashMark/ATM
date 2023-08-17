@@ -7,9 +7,9 @@ import org.example.dataBase.atmCollectionDao.ICollectionDao;
 import org.example.exception.Exception;
 import org.example.atm.CollectionOperations.CollectionOperations;
 import org.example.atm.ClientOperations.ClientOperations;
-import org.example.model.ATMCollectionCredentials;
-import org.example.model.ATMClientCredentials;
-import org.example.model.ATMClient;
+import org.example.model.CollectionCredentials;
+import org.example.model.ClientCredentials;
+import org.example.model.Client;
 import org.example.ui.ConsoleUI;
 import org.example.ui.UI;
 
@@ -21,16 +21,16 @@ public class Core {
     private ClientOperations ATMIClientOperations;
     private ICollectionDao atmCollectionDao;
     private IClientDao atmClientDao;
-    private ATMClientCredentials iATMClientCredentials;
-    private ATMCollectionCredentials iATMCollectionCredentials;
-    private ATMClient atmClient;
+    private ClientCredentials iClientCredentials;
+    private CollectionCredentials iCollectionCredentials;
+    private Client client;
 
     public void init() {
         ui = new ConsoleUI();
         collectionOperationsImp = new CollectionOperations();
         ATMIClientOperations = new ClientOperationsImp();
-        iATMClientCredentials = new ATMClientCredentials();
-        iATMCollectionCredentials = new ATMCollectionCredentials("1234");
+        iClientCredentials = new ClientCredentials();
+        iCollectionCredentials = new CollectionCredentials("1234");
         atmClientDao = new ClientDao();
         atmCollectionDao = new CollectionDao();
 

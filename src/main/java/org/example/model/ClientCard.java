@@ -39,4 +39,8 @@ public class ClientCard {
     public void setCardPassword(String cardPassword) {
         this.cardPassword = cardPassword;
     }
+
+    public void setRublesBalance(int rublesBalance) {
+        this.rublesBalance = rublesBalance;
+    }
 }

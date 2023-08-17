@@ -2,7 +2,8 @@ package org.example.atm;
 
 import org.example.atm.ComputingOperations.ComputingOperations;
 import org.example.atm.ComputingOperations.IComputingOperations;
-import org.example.model.ATMCollection;
+import org.example.model.Client;
+import org.example.model.Collection;
 import org.example.model.Command;
 
 import java.io.*;
@@ -50,12 +51,12 @@ public class ATM implements IATMOperations  {
         }
     }
 
-    public void writeCollectionReportToFile(Command command, ATMCollection atmCollection) {
+    public void writeCollectionReportToFile(Command command, Collection collection) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter(this.getCollectionReportsPath(), true))) {
 
             bufferedWriter.write("COLLECTION NUMBER : "
-                    + atmCollection.getIdentificationNumber()
+                    + collection.getIdentificationNumber()
                     + " OPERATION : " + command.toString()
                     + " \nTIME : " + LocalDateTime.now() + "\n");
 
@@ -63,7 +64,11 @@ public class ATM implements IATMOperations  {
             throw new RuntimeException(e);
         }
     }
-
+    @Override
+    public void setNewClientBalance(Client client, HashMap<Integer,Integer> money) {
+       client.getATMClientCard().setRublesBalance(client.getATMClientCard().getRublesBalance()
+               + iATMComputingOperations.countAddedClientMoney(money));
+    }
 
 
     public String getCollectionReportsPath() {

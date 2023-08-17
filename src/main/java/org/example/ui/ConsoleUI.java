@@ -1,7 +1,7 @@
 package org.example.ui;
 
 import org.example.exception.Exception;
-import org.example.model.ATMClientCredentials;
+import org.example.model.ClientCredentials;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -20,7 +20,7 @@ public class ConsoleUI implements UI {
     Pattern pinCodePattern = Pattern.compile("\\d{4}");
 
     @Override
-    public ATMClientCredentials showAuthorizationMenu(ATMClientCredentials credentials) throws Exception {
+    public ClientCredentials showAuthorizationMenu(ClientCredentials credentials) throws Exception {
         validInput = false;
         switch (choice) {
             case 1 -> {
@@ -116,7 +116,7 @@ public class ConsoleUI implements UI {
 
 
     @Override
-    public ATMClientCredentials getCredentials(ATMClientCredentials credentials) {
+    public ClientCredentials getCredentials(ClientCredentials credentials) {
         return credentials;
     }
 }

@@ -1,7 +1,7 @@
 package org.example.dataBase;
 
-import org.example.model.ATMCollection;
-import org.example.model.ATMClient;
+import org.example.model.Collection;
+import org.example.model.Client;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class Dao {
-    private List<ATMClient> atmClients = new ArrayList<>();
-    private List<ATMCollection> atmCollections =  new ArrayList<>();
+    private List<Client> clients = new ArrayList<>();
+    private List<Collection> collections =  new ArrayList<>();
 
     private final String atmClientDB = "C:\\Users\\markm\\Desktop" +
             "\\javaProjectsHome\\ATM\\src\\main\\java\\org\\example\\dataBase\\atmClientFile";
@@ -23,20 +23,20 @@ public  class Dao {
     private boolean authorizationIndicator = false;
 
 
-    public List<ATMClient> getATMClientList() {
-        return atmClients;
+    public List<Client> getATMClients() {
+        return clients;
     }
 
-    public void setATMClientList(List<ATMClient> atmClientList) {
-        this.atmClients = atmClientList;
+    public void setATMClients(List<Client> clientList) {
+        this.clients = clientList;
     }
 
-    public List<ATMCollection> getATMCollectionList() {
-        return atmCollections;
+    public List<Collection> getATMCollectionList() {
+        return collections;
     }
 
-    public void setATMCollectionList(List<ATMCollection> atmCollectionList) {
-        this.atmCollections = atmCollectionList;
+    public void setATMCollectionList(List<Collection> collectionList) {
+        this.collections = collectionList;
     }
 
     public boolean isAuthorizationIndicator() {

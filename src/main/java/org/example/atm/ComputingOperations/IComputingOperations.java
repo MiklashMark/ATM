@@ -10,4 +10,6 @@ public interface IComputingOperations {
      HashMap<Integer, Integer> getNewBalance(ATM atm, ComputingOperations.OperationType operationType);
 
      ArrayList<Banknotes> getBanknotesList();
+     int countAddedClientMoney(HashMap<Integer,Integer> money);
+
 }

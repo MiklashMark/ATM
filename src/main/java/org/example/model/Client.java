@@ -1,11 +1,11 @@
 package org.example.model;
 
-public class ATMClient {
+public class Client {
 
     private ClientCard clientCard;
 
 
-    public ATMClient() {
+    public Client() {
     }
 
     public ClientCard getATMClientCard() {
@@ -18,4 +18,6 @@ public class ATMClient {
                 "atmClientCardsList=" + clientCard +
                 '}';
     }
+
+    public Client getClient(){return this;}
 }

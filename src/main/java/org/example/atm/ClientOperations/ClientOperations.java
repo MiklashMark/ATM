@@ -2,13 +2,15 @@ package org.example.atm.ClientOperations;
 import org.example.atm.atmClientOperations.IClientOperations;
 
 import org.example.atm.ATM;
-import org.example.model.ATMClient;
+import org.example.model.Client;
+import org.example.ui.UI;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class ClientOperations implements IClientOperations {
-    ATMClient atmClient;
-    // TODO Mark : replenishTheBalance, PrintChack;
+    Client client;
+    // TODO Mark : replenishTheBalance, PrintCheck;
     // TODO Dima : getCash;
 
     // All computing operations should be realized in ComputingOperation class
@@ -16,22 +18,22 @@ public class ClientOperations implements IClientOperations {
 
 
     @Override
-    public void replenishTheBalance(ATM atm, int money) {
-
+    public void replenishTheBalance(ATM atm, HashMap<Integer, Integer> money) {
+        atm.setNewClientBalance(client, money);
     }
 
     @Override
     public void changePinCode(String newPinCode) {
-        atmClient.getATMClientCard().setCardPassword(newPinCode);
+        client.getATMClientCard().setCardPassword(newPinCode);
     }
 
     @Override
     public void printCheck() {
-
+        
     }
 
-    public void setAtmClient(ATMClient atmClient) {
-        this.atmClient = atmClient;
+    public void setAtmClient(Client client) {
+        this.client = client;
     }
 
     @Override
@@ -41,7 +43,7 @@ public class ClientOperations implements IClientOperations {
 
     @Override
     public double checkCardBalance() {
-        return atmClient.getATMClientCard().getRublesBalance()
-                + atmClient.getATMClientCard().getPenniesBalance() * 0.01;
+        return client.getATMClientCard().getRublesBalance()
+                + client.getATMClientCard().getPenniesBalance() * 0.01;
     }
 }

@@ -1,11 +1,11 @@
 package org.example.model;
 
-public class ATMCollectionCredentials {
+public class CollectionCredentials {
     private String identificationNumber;
     private String atmPassword;
-    public ATMCollectionCredentials(){};
+    public CollectionCredentials(){};
 
-    public ATMCollectionCredentials(String identificationNumber) {
+    public CollectionCredentials(String identificationNumber) {
         this.identificationNumber = identificationNumber;
     }
 

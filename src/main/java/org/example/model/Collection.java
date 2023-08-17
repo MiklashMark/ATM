@@ -1,10 +1,8 @@
 package org.example.model;
 
-import java.util.Scanner;
-
-public class ATMCollection {
+public class Collection {
     private String identificationNumber;
-    public ATMCollection(){}
+    public Collection(){}
 
     public String getIdentificationNumber() {
         return identificationNumber;

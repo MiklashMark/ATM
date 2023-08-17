@@ -6,6 +6,7 @@ import org.example.model.Banknotes;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class ComputingOperations implements IComputingOperations {
 
@@ -57,5 +58,14 @@ public class ComputingOperations implements IComputingOperations {
         banknotesArrayList.add(Banknotes.FIVE_HUNDRED);
 
         return banknotesArrayList;
+    }
+
+    @Override
+    public int countAddedClientMoney(HashMap<Integer, Integer> money) {
+        int sum = 0;
+        for (Map.Entry<Integer,Integer> entry : money.entrySet()) {
+            sum += entry.getKey() * entry.getValue();
+        }
+        return sum;
     }
 }

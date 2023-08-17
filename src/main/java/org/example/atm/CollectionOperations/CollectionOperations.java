@@ -2,7 +2,7 @@ package org.example.atm.CollectionOperations;
 
 import org.example.atm.ATM;
 import org.example.atm.ComputingOperations.ComputingOperations;
-import org.example.model.ATMCollection;
+import org.example.model.Collection;
 import org.example.model.Banknotes;
 import org.example.model.Command;
 
@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class CollectionOperations implements ICollectionOperations {
 
     private ATM atm = new ATM();
-    private ATMCollection atmCollection;
+    private Collection collection;
 
     @Override
     public void addCash() throws IOException {
@@ -38,7 +38,7 @@ public class CollectionOperations implements ICollectionOperations {
 
     @Override
     public void report(Command command) throws IOException {
-        atm.writeCollectionReportToFile(command, atmCollection);
+        atm.writeCollectionReportToFile(command, collection);
     }
 
 
@@ -62,7 +62,7 @@ public class CollectionOperations implements ICollectionOperations {
         report(Command.COLLECTION_MENU_CHECK_BALANCE);
     }
 
-    public void setAtmCollection(ATMCollection atmCollection) {
-        this.atmCollection = atmCollection;
+    public void setAtmCollection(Collection collection) {
+        this.collection = collection;
     }
 }

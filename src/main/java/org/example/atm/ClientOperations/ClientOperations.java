@@ -7,6 +7,7 @@ import org.example.ui.UI;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class ClientOperations implements IClientOperations {
     Client client;
@@ -37,8 +38,12 @@ public class ClientOperations implements IClientOperations {
     }
 
     @Override
-    public void getCash() throws IOException {
-
+    public void getCash(ATM atm) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        int cash = scanner.nextInt();
+        if(cash <= (int) checkCardBalance() && cash <= atm.getTotalBalance()){
+            atm.getCash(cash);
+        }
     }
 
     @Override

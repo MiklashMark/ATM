@@ -9,6 +9,6 @@ public interface IClientOperations {
     void replenishTheBalance(ATM atm, HashMap<Integer, Integer> money);
     void changePinCode(String newPinCode);
     void printCheck();
-    public void getCash() throws IOException;
+    public void getCash(ATM atm) throws IOException;
     public double checkCardBalance();
 }

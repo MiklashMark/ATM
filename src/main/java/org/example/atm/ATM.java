@@ -70,6 +70,17 @@ public class ATM implements IATMOperations  {
                + iATMComputingOperations.countAddedClientMoney(money));
     }
 
+//    public int getCash(int userCash){
+//
+//        iATMComputingOperations.withdrawUsingGreedyAlgorithm();
+//    }
+
+    public int getTotalBalance(){
+        return actualATMBalance.entrySet()
+                .stream()
+                .mapToInt(entry -> entry.getKey() * entry.getValue())
+                .sum();
+    }
 
     public String getCollectionReportsPath() {
         return collectionReportsPath;

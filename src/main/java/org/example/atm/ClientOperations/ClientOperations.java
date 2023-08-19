@@ -12,10 +12,10 @@ import java.util.Scanner;
 public class ClientOperations implements IClientOperations {
     Client client;
     // TODO Mark : replenishTheBalance, PrintCheck;
-    // TODO Dima : getCash;
+    // TODO Dima : getCash; (Done)
 
     // All computing operations should be realized in ComputingOperation class
-    // Dima : create ATM method, which should be call DB and update ATMClient information in DB
+    // Dima : create ATM method, which should be call DB and update ATMClient information in DB (Not done)
 
 
     @Override
@@ -43,7 +43,11 @@ public class ClientOperations implements IClientOperations {
         int cash = scanner.nextInt();
         if(cash <= (int) checkCardBalance() && cash <= atm.getTotalBalance()){
             atm.getCash(cash);
+        } else {
+            System.err.println("No money");
         }
+        //todo should the method return something??? int to consoleUI?
+        // if yes - return cash
     }
 
     @Override

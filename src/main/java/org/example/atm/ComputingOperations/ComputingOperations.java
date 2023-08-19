@@ -15,6 +15,7 @@ public class ComputingOperations implements IComputingOperations {
         SUBTRACT
     }
 
+
     @Override
     public HashMap<Integer, Integer> getNewBalance(ATM atm, OperationType operationType) {
         HashMap<Integer, Integer> actualMapBalance = atm.getActualATMBalance();
@@ -63,9 +64,44 @@ public class ComputingOperations implements IComputingOperations {
     @Override
     public int countAddedClientMoney(HashMap<Integer, Integer> money) {
         int sum = 0;
-        for (Map.Entry<Integer,Integer> entry : money.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : money.entrySet()) {
             sum += entry.getKey() * entry.getValue();
         }
         return sum;
+    }
+
+    @Override
+    public void withdrawUsingGreedyAlgorithm(ATM atm, int cash) {
+        HashMap<Integer, Integer> actualMapBalance = atm.getActualATMBalance();
+        HashMap<Integer, Integer> withdrawnCash = new LinkedHashMap<>();
+
+        //sort nominals from Hi to Lo (500, 200 etc.)
+        ArrayList<Integer> denominations = new ArrayList<>(actualMapBalance.keySet());
+        denominations.sort((a, b) -> b - a);
+
+        int cashToWithdraw = cash;
+
+        //alghoritm
+        for (Integer denomination : denominations) {
+            int notesAvailable = actualMapBalance.get(denomination);
+            if (notesAvailable > 0) {
+                int notesToWithdraw = cashToWithdraw / denomination;
+                if (notesToWithdraw > 0) {
+                    // Определяем, сколько купюр можно выдать
+                    int notesToIssue = Math.min(notesAvailable, notesToWithdraw);
+                    withdrawnCash.put(denomination, notesToIssue);
+                    cashToWithdraw -= denomination * notesToIssue;
+                }
+            }
+        }
+
+        //update ATM balance
+        for (Map.Entry<Integer, Integer> entry : withdrawnCash.entrySet()) {
+            int denomination = entry.getKey();
+            int notesWithdrawn = entry.getValue();
+            actualMapBalance.put(denomination, actualMapBalance.get(denomination) - notesWithdrawn);
+        }
+        atm.setActualATMBalance(actualMapBalance);
+
     }
 }

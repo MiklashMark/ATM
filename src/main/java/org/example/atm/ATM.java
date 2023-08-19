@@ -70,10 +70,10 @@ public class ATM implements IATMOperations  {
                + iATMComputingOperations.countAddedClientMoney(money));
     }
 
-//    public int getCash(int userCash){
-//
-//        iATMComputingOperations.withdrawUsingGreedyAlgorithm();
-//    }
+    @Override
+    public void getCash(int userCash) {
+        iATMComputingOperations.withdrawUsingGreedyAlgorithm(this, userCash);
+    }
 
     public int getTotalBalance(){
         return actualATMBalance.entrySet()
